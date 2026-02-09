@@ -1,34 +1,33 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Importa todas as imagens da pasta PDVCARDAPIO
+// Importa todas as imagens da pasta PDVESTOQUE
 const images = Object.values(
-  import.meta.glob('/assets/PDVCARDAPIO/*.{png,jpg,jpeg}', { eager: true })
+  import.meta.glob('/assets/PDVESTOQUE/*.{png,jpg,jpeg}', { eager: true })
 );
 
-export default function PDV() {
+export default function AutoColor() {
   return (
     <section className="min-h-screen bg-black text-white py-16 px-4 md:px-12">
-      {/* Hero */}
       <motion.div
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="max-w-4xl mx-auto mb-12"
       >
-        <h1 className="text-4xl md:text-6xl font-black mb-4">PDV — Sistema de Vendas</h1>
-        <h2 className="text-xl md:text-2xl font-semibold mb-6 text-cyan-400">Sistema web para operação comercial</h2>
+        <h1 className="text-4xl md:text-6xl font-black mb-4">AutoColor</h1>
+        <h2 className="text-xl md:text-2xl font-semibold mb-6 text-emerald-400">Plataforma para lojas</h2>
         {/* Imagem destaque (primeira da pasta) */}
         {images.length > 0 && (
           <img
             src={images[0].default || images[0]}
-            alt="Tela principal do PDV"
+            alt="Tela principal do AutoColor"
             className="rounded-xl shadow-lg w-full max-h-96 object-cover mb-8"
           />
         )}
       </motion.div>
 
-      {/* Contexto */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -37,10 +36,10 @@ export default function PDV() {
       >
         <h3 className="text-2xl font-bold mb-2">Contexto do Projeto</h3>
         <p className="text-gray-300 mb-4">
-          O PDV — Sistema de Vendas foi desenvolvido para otimizar o atendimento de uma lanchonete, integrando vendas, controle de estoque e pagamento em um fluxo ágil. O foco foi facilitar a operação do dia a-dia, garantindo agilidade nas transações e melhorando a experiência tanto dos clientes quanto da equipe.       </p>
+          Plataforma para lojas, com cadastro de produtos, controle de vendas, geração de receitas e relatórios.
+        </p>
       </motion.div>
 
-      {/* Problema */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,10 +48,10 @@ export default function PDV() {
       >
         <h3 className="text-2xl font-bold mb-2">Problema</h3>
         <p className="text-gray-300 mb-4">
-          Pequenos estabelecimentos costumam ter dificuldade em controlar pedidos, pagamentos, fluxo de caixa e acompanhamento de pedidos de forma ágil. Muitas vezes, há falta de integração entre comandas, pagamentos e controle de produção, impactando a eficiência.        </p>
+          Lojas precisam de controle eficiente de estoque, vendas e geração de relatórios para tomada de decisão.
+        </p>
       </motion.div>
 
-      {/* Solução */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -61,10 +60,10 @@ export default function PDV() {
       >
         <h3 className="text-2xl font-bold mb-2">Solução</h3>
         <p className="text-gray-300 mb-4">
-          O PDV desenvolvido integra pedidos, controle de comandas, registro de vendas e fechamento de caixa em tempo real, proporcionando uma operação fluida, com interface simples e melhor experiência tanto para a equipe quanto para o cliente.        </p>
+          O AutoColor integra cadastro de produtos, controle de vendas, geração de receitas e relatórios em uma plataforma web moderna e fácil de usar.
+        </p>
       </motion.div>
 
-      {/* Tecnologias / Arquitetura */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -74,10 +73,9 @@ export default function PDV() {
         <h3 className="text-2xl font-bold mb-2">Tecnologias / Arquitetura</h3>
         <ul className="list-disc list-inside text-gray-300">
           <li>React</li>
-          <li>Node.js</li>
-          <li>PostgreSQL</li>
+          <li>Express</li>
+          <li>MongoDB</li>
           <li>Tailwind CSS</li>
-          <li>Arquitetura modular</li>
         </ul>
       </motion.div>
 
@@ -94,14 +92,13 @@ export default function PDV() {
             <img
               key={idx}
               src={img.default || img}
-              alt={`Tela ${idx + 1}`}
+              alt={`Tela AutoColor ${idx + 1}`}
               className="rounded-lg shadow-md w-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
             />
           ))}
         </div>
       </motion.div>
 
-      {/* Resultado */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -110,11 +107,10 @@ export default function PDV() {
       >
         <h3 className="text-2xl font-bold mb-2">Resultado</h3>
         <p className="text-gray-300 mb-4">
-          O sistema trouxe ganhos operacionais significativos: agilidade no atendimento, redução de erros, integração fiscal automatizada e relatórios precisos para tomada de decisão.
+          Plataforma pronta para expansão, com controle total de vendas e estoque, e relatórios detalhados.
         </p>
       </motion.div>
 
-      {/* Ações */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -122,10 +118,10 @@ export default function PDV() {
         className="flex gap-4 justify-center mt-8"
       >
         <a
-          href="https://github.com/lzguisouza2211-gif/PDV-Lanchonete"
+          href="https://github.com/lzguisouza2211-gif/Autocolor-System"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-cyan-500 text-white rounded-lg font-semibold shadow hover:bg-cyan-400 transition-colors"
+          className="px-6 py-3 bg-emerald-500 text-white rounded-lg font-semibold shadow hover:bg-emerald-400 transition-colors"
         >
           Ver no GitHub
         </a>

@@ -4,7 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code2, Rocket, Zap } from 'lucide-react';
 // Adiciona a imagem do usuário
-import userPhoto from '../../assets/user-photo.jpg';
+import userPhoto from '/assets/user-photo.jpg';
 
 export default function AboutSection() {
   const ref = useRef(null);

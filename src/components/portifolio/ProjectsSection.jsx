@@ -7,9 +7,9 @@ const projects = [
   {
     id: 'pdv',
     title: 'PDV — Sistema de Vendas',
-    subtitle: 'Gestão de vendas e estoque',
-    description: 'Sistema completo para frente de loja, utilizado em operações reais. Controle de vendas, estoque, relatórios e integração fiscal.',
-    image: '/assets/projects/placeholder.png',
+    subtitle: 'Gestão do cardápio, vendas e estoque',
+    description: 'O PDV desenvolvido integra pedidos, controle de comandas, registro de vendas e fechamento de caixa em tempo real, proporcionando uma operação fluida, com interface simples e melhor experiência tanto para a equipe quanto para o cliente.',    
+    image: '/assets/PDVCARDAPIO/2-dashboard.png',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Tailwind'],
     github: 'https://github.com/luizguilherme/pdv',
     live: '/projetos/pdv',
@@ -18,23 +18,23 @@ const projects = [
   {
     id: 'autocolor',
     title: 'AutoColor',
-    subtitle: 'Venda e gestão de tintas',
+    subtitle: 'Venda e gestão de estoque',
     description: 'Plataforma para lojas de tintas, com cadastro de produtos, controle de vendas, geração de receitas e relatórios.',
-    image: '/assets/projects/placeholder.png',
+    image: '/assets/PDVESTOQUE/dashboard.png',
     tags: ['React', 'Express', 'MongoDB', 'Tailwind'],
     github: 'https://github.com/luizguilherme/autocolor',
     live: '/projetos/autocolor',
     color: 'bg-emerald-400',
   },
   {
-    id: 'dashboard',
-    title: 'Dashboard de Monitoramento',
-    subtitle: 'Estudo de arquitetura modular',
-    description: 'Projeto conceitual para monitoramento de sistemas, focado em modularidade, escalabilidade e integração de dados.',
-    image: '/assets/projects/placeholder.png',
-    tags: ['React', 'TypeScript', 'Arquitetura'],
-    github: 'https://github.com/luizguilherme/dashboard-conceitual',
-    live: '/projetos/dashboard',
+    id: 'crm-fisioclinic',
+    title: 'FisioClinic — CRM de Fisioterapia',
+    subtitle: 'Gestão clínica e academia',
+    description: 'Plataforma de gestão clínica para fisioterapia, academia e saúde, evoluindo de um MVP operacional para uma solução completa com BI, automação e inteligência artificial.',
+    image: '/assets/CRMFISIO/1-dashboard.png',
+    tags: ['React', 'TypeScript', 'CRM', 'Fisioterapia', 'Gestão'],
+    github: '#',
+    live: '/projetos/fisioclinic',
     color: 'bg-indigo-400',
   },
   {
@@ -56,12 +56,12 @@ const projects = [
     return (
       <motion.div
         ref={ref}
-        className="group relative cursor-pointer"
+        className="group relative cursor-pointer h-full"
         initial={{ opacity: 0, y: 80 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: index * 0.15 }}
       >
-        <div className="relative overflow-hidden rounded-2xl bg-gray-900 border border-white/10 hover:border-cyan-400/50 transition-all duration-500">
+        <div className="relative flex flex-col h-full overflow-hidden rounded-2xl bg-gray-900 border border-white/10 hover:border-cyan-400/50 transition-all duration-500">
           <div className="relative h-64 md:h-80 overflow-hidden">
             <motion.img
               src={project.image}
@@ -76,7 +76,7 @@ const projects = [
             />
           </div>
 
-          <div className="p-6 md:p-8">
+          <div className="flex-1 flex flex-col p-6 md:p-8">
             <span
               className={`text-xs tracking-[0.25em] bg-gradient-to-r ${project.color} bg-clip-text text-transparent font-semibold`}
             >
@@ -145,7 +145,7 @@ export default function ProjectsSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {projects.map((project, index) => (
             <a
               key={project.id}
